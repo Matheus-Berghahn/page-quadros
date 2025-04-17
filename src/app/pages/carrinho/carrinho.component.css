@@ -1,0 +1,226 @@
+.cart {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-top: 20vh;
+  position: relative;
+}
+
+.cart h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-details h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.cart-item-details strong {
+  font-size: 18px;
+  color: #333;
+}
+
+.cart-item input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+.cart-footer {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.cart-footer h3 {
+  font-size: 18px;
+}
+
+.checkout-btn {
+  background-color: #000000;
+  margin-top: 10px;
+}
+
+.checkout-btn:hover {
+  background-color: #00a516;
+  margin-top: 10px;
+}
+
+.empty-cart-message {
+  text-align: center;
+  color: #888;
+}
+
+.confirm-clear {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.confirm-clear button {
+  background-color: #000000;
+  margin: 5px;
+}
+
+.confirm-clear button:hover {
+  background-color: #181818;
+}
+
+.btn-frete{
+  margin-left: 10px ;
+}
+
+.input-frete{
+  padding: 12px;
+}
+.btn-clear{
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+}
+
+.btn-clear:hover{
+  background-color: #c50000;
+  color: white;
+  border: 1px solid #c50000;
+}
+
+.btn-finish{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.frete{
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+.input-quantity{
+  width: 36px !important;
+    padding: 11px !important;
+    font-size: 20px !important;
+    border: 1px solid #000000 !important;
+    margin-right: 30px !important;
+}
+
+
+.mask-modal{
+  position: absolute;
+  overflow: hidden;
+  top: 0%;
+  left: calc(100% + 1px);
+  width: 30%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.confirm-remove-item {
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 5%;
+}
+
+.confirm-remove-item button {
+  background-color: #000000;
+  margin: 5px;
+}
+
+.confirm-remove-item button:hover {
+  background-color: #181818;
+}
+
+.animation-modal {
+  transform: translateX(-100%);
+  animation: slide-in-x 300ms ease-out forwards;
+}
+
+@keyframes slide-in-x {
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+.modal-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+  margin: 0 0 10px;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #333;
+}

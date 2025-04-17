@@ -1,0 +1,40 @@
+<mat-toolbar class="app-header">
+  <div class="logo">Logo</div>
+
+  <span class="spacer"></span>
+
+  <div class="user-info">
+    <ng-container *ngIf="isLoggedIn; else loginLink">
+      <span>Olá, {{ userName }}</span>
+    </ng-container>
+
+    <ng-template #loginLink>
+      <button class="login-btn" mat-button [routerLink]="['/login']">Login</button>
+    </ng-template>
+
+    <div class="cart-hover-wrapper" (click)="goToCart()" (mouseenter)="showCartPreview = true" (mouseleave)="showCartPreview = false">
+      <button mat-icon-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <span>{{ cartCount }}</span>
+
+      <div (click)="goToCart()" class="cart-preview-box" *ngIf="showCartPreview && cartItems.length > 0">
+        <div class="cart-item" *ngFor="let item of cartItems">
+          <img [src]="item.thumbnail" alt="Produto" />
+          <div class="item-info">
+            <span>{{ item.title }} x{{ item.quantity }}</span>
+          </div>
+        </div>
+
+        <div class="cart-total">
+          Total: R$ {{ getTotal().toFixed(2) }}
+        </div>
+
+        <button class="go-to-cart" >Ir para o carrinho</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mostrar botão "Sair" apenas se estiver logado -->
+  <button class="sair-btn" mat-button *ngIf="isLoggedIn" (click)="logout()">Sair</button>
+</mat-toolbar>

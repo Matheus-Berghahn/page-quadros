@@ -1,0 +1,119 @@
+
+
+.app-header {
+  background-color: #000; /* preto */
+  color: #fff;            /* texto branco */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 50px 6%;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  
+  span {
+    padding-right: 50px;
+  }
+}
+
+.mat-icon {
+  color: white; /* ícone branco */
+  padding-bottom: 0px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.cart-hover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-preview-box {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px;
+  width: 400px;
+  z-index: 999;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.item-info span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cart-total {
+  text-align: right;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.go-to-cart {
+  margin-top: 12px;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.go-to-cart:hover {
+  background: #e4e4e4;
+}
+
+.login-btn{
+  transition: 0.4s;
+  padding-top: 0px;
+}
+
+.login-btn:hover{
+  transition: 0.4s;
+  padding-bottom: 10px;
+}
+.sair-btn{
+  transition: 0.4s;
+  padding-top: 10px;
+}
+
+.sair-btn:hover{
+  transition: 0.4s;
+  padding-top: 0px;
+}

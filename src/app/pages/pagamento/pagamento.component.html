@@ -1,0 +1,78 @@
+<div class="pagamento">
+    <h2>Pagamento</h2>
+  
+    <h3>Endereço de Entrega</h3>
+    <form #form="ngForm" (ngSubmit)="finalizarPagamento()" novalidate>
+      <div class="form-group">
+        <label for="rua">Rua</label>
+        <input
+          type="text"
+          id="rua"
+          name="rua"
+          [(ngModel)]="endereco.rua"
+          required
+          pattern="^[A-Za-zÀ-ÿ0-9\s\-\.]+$"
+          #rua="ngModel"
+        />
+        <div class="erro" *ngIf="rua.invalid && rua.touched">Informe uma rua válida</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="numero">Número</label>
+        <input
+          type="text"
+          id="numero"
+          name="numero"
+          [(ngModel)]="endereco.numero"
+          required
+          pattern="^[0-9]+$"
+          #numero="ngModel"
+        />
+        <div class="erro" *ngIf="numero.invalid && numero.touched">Informe um número válido</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input
+          type="text"
+          id="cidade"
+          name="cidade"
+          [(ngModel)]="endereco.cidade"
+          required
+          pattern="^[A-Za-zÀ-ÿ\s]+$"
+          #cidade="ngModel"
+        />
+        <div class="erro" *ngIf="cidade.invalid && cidade.touched">Informe uma cidade válida</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="celular">Celular</label>
+        <input
+          type="tel"
+          id="celular"
+          name="celular"
+          [(ngModel)]="endereco.celular"
+          required
+          pattern="^(\+55\s?)?(?:\(?\d{2}\)?\s?)?(?:9\d{4}|\d{4})-?\d{4}$"
+          #celular="ngModel"
+        />
+        <div class="erro" *ngIf="celular.invalid && celular.touched">Número inválido (ex: 1199999-9999)</div>
+      </div>
+  
+      <button type="submit" class="btn-finalizar" [disabled]="form.invalid">
+        Finalizar Pedido
+      </button>
+    </form>
+  
+    <div class="resumo-pagamento">
+      <h3>Resumo</h3>
+      <p>Itens: R$ {{ valorItens | number: '1.2-2' }}</p>
+      <p>Frete: R$ {{ valorFrete | number: '1.2-2' }}</p>
+      <p><strong>Total: R$ {{ valorTotal | number: '1.2-2' }}</strong></p>
+    </div>
+  
+    <div class="qr-code">
+      <h3>Pagamento via QR Code (PIX)</h3>
+    </div>
+  </div>
+  

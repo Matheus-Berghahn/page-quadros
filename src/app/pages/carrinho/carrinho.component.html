@@ -1,0 +1,72 @@
+<div class="cart">
+  <h1>Seu Carrinho</h1>
+
+  <div *ngIf="cartItems.length === 0" class="empty-cart-message">
+    Seu carrinho está vazio.
+  </div>
+
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <img [src]="item.thumbnail" alt="{{ item.name }}" />
+    <div class="cart-item-details">
+      <h2>{{ item.name }} x{{ item.quantity }}</h2>
+      <strong>R$ {{ (item.price * (item.quantity ?? 1)) | number:'1.2-2' }}</strong>
+
+      <!-- Atualização de quantidade -->
+      <div class="quantity-input-wrapper">
+        <input class="input-quantity" type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item.id, item.quantity)" min="1" />
+      </div>
+
+      <!-- Botão de remoção -->
+      <button (click)="removeFromCart(item)">Remover</button>
+    </div>
+  </div>
+
+  <!-- Confirmação de limpeza do carrinho -->
+  <div *ngIf="isConfirmingRemoveItem" class="mask-modal">
+    <div  class="confirm-remove-item animation-modal">
+    <p>Tem certeza que deseja remover <strong>{{ selectedItem?.title }}</strong> do carrinho?</p>
+    <button (click)="confirmRemoveItem()">Sim</button>
+    <button (click)="cancelRemoveItem()">Não</button>
+  </div>
+  </div>
+  
+
+  <!-- Campo para inserir o CEP de destino -->
+  <input class="input-frete" type="text" [(ngModel)]="cepDestino" placeholder="Digite o CEP de destino" />
+
+  <!-- Botão para calcular o frete -->
+  <button class="btn-frete" (click)="calcularFrete()">Calcular Frete</button>
+
+  <!-- Exibe o valor do frete e prazo de entrega -->
+  <div *ngIf="valorFrete && prazoEntrega">
+    <p>Valor do Frete: R$ {{ valorFrete }}</p>
+    <p>Prazo de Entrega: {{ prazoEntrega }} dias</p>
+  </div>
+
+  <div class="cart-footer">
+    <h3>Total: R$ {{ cartTotal | number:'1.2-2' }}</h3>
+  
+    <!-- Confirmação de limpeza do carrinho -->
+    <div *ngIf="isConfirmingClear" class="confirm-clear">
+      <p>Tem certeza que deseja limpar o carrinho?</p>
+      <button (click)="confirmClearCart()">Sim</button>
+      <button (click)="cancelClearCart()">Não</button>
+    </div>
+  
+    <!-- Botão de limpar carrinho -->
+    <button class="btn-clear" *ngIf="!isConfirmingClear" (click)="clearCart()">Limpar Carrinho</button>
+  
+    <!-- Botão de finalizar compra -->
+    <button class="btn-finish" (click)="finalizarCompra()">Finalizar Compra</button>
+  </div>
+  
+  <!-- Modal de alerta quando o carrinho estiver vazio -->
+  <div *ngIf="isCartEmptyAlertVisible" class="modal-alert">
+    <div class="modal-content">
+      <h2>Alerta!</h2>
+      <p>Seu carrinho está vazio. Adicione itens para finalizar a compra.</p>
+      <button (click)="isCartEmptyAlertVisible = false">Fechar</button>
+    </div>
+  </div>
+  
+</div>

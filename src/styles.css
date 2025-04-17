@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Caixa dos inputs e selects */
+.mat-mdc-text-field-wrapper {
+    background-color: #0a0a0a !important;
+    border: 1px solid #fff !important;
+  }
+  
+  /* Texto digitado e labels */
+  .mat-mdc-input-element,
+  .mat-mdc-select-value,
+  .mat-mdc-floating-label {
+    color: #fff !important;
+  }
+  
+  /* Label quando o campo está com foco */
+  .mat-mdc-form-field-label {
+    color: #ccc !important;
+  }
+  
+  /* Placeholder, label pequena etc */
+  .mat-mdc-floating-label.mdc-floating-label {
+    color: #bbb !important;
+  }
+  
+  /* Remove sublinhado dos campos */
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+  }
+  
+  /* Ícone da seta no mat-select */
+  .mat-mdc-select-arrow {
+    color: #fff !important;
+  }
+  
+  /* Dropdown do select */
+  .mat-mdc-select-panel {
+    margin-top: 10px;
+    background-color: #0a0a0a !important;
+    border: 1px solid #fff !important;
+
+    color: #fff !important;
+  }
+  
+  /* Opções dentro do select */
+  .mat-mdc-option {
+    color: #fff !important;
+  }
+  
+  .mat-mdc-option:hover {
+    background-color: #222 !important;
+  }
+  

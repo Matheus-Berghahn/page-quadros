@@ -1,0 +1,42 @@
+<div class="filters">
+  <mat-form-field appearance="fill" class="custom-form-field">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="searchTerm">
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill" class="custom-form-field">
+    <mat-label>Categoria</mat-label>
+    <mat-select [(ngModel)]="selectedCategory">
+      <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+
+  <button mat-raised-button color="primary" (click)="applyFilters()">Filtrar</button>
+</div>
+
+
+
+<div class="product-grid">
+  <mat-card *ngFor="let product of displayedProducts" class="product-card">
+    <img mat-card-image [src]="product.thumbnail" [alt]="product.title" />
+    <mat-card-content>
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.description }}</p>
+      <strong>R$ {{ product.price }}</strong>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button class="btn-card" color="primary" (click)="addToCart(product)">
+        Adicionar ao carrinho
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="pagination">
+  <button mat-button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+  <span>Página {{ currentPage }}</span>
+  <button mat-button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= filteredProducts.length">
+    Próxima
+  </button>
+</div>

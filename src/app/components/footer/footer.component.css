@@ -1,0 +1,36 @@
+.app-footer {
+    width: 100%;
+    background-color: #0a0a0a;
+    padding: 2rem 0rem;
+    color: #ffffffcc;
+    border-top: 1px solid #444;
+  
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+  
+      p {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+  
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+  
+        a {
+          color: #ffffffaa;
+          text-decoration: none;
+          font-size: 0.85rem;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: blue;
+          }
+        }
+      }
+    }
+  }
+  
